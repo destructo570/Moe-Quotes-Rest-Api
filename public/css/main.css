@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "sans-serif";
+}
+
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #212529;
+  color: white;
+}
+
+h1 {
+  padding: 1em;
+  font-size: 3rem;
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-form > div {
+  display: flex;
+}
+
+.form-element {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+input {
+  margin-left: 1.4em;
+  padding: 0.75em;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  background-color: #343a40;
+  color: white;
+  min-height: 50px;
+}
+
+textarea {
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  min-width: 300px;
+  min-height: 100px;
+  margin-left: 1.4em;
+  padding: 0.75em;
+  width: 100%;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #343a40;
+  color: white;
+}
+
+button {
+  padding: 1em;
+  min-width: 150px;
+  border-radius: 9px;
+  outline: none;
+  border: none;
+  background-color: #6c757d;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  width: 250px;
+  align-self: flex-end;
+  margin: 1em;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #79828a;
+}
