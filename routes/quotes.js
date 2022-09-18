@@ -5,10 +5,10 @@ const router = express.Router();
 
 router.get("/", quotesController.getRandomQuote);
 
-router.get("/id/:quoteId", quotesController.getQuoteById);
+router.get("/id", quotesController.getQuoteById);
 
-router.get("/anime/:animeName", quotesController.getQuotesByAnime);
+router.get("/anime", quotesController.getQuotesByAnime);
 
-router.get("/character/:characterName", quotesController.getQuotesByCharacter);
+router.get("/character", quotesController.getQuotesByCharacter);
 
 module.exports = router;

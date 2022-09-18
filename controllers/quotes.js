@@ -14,7 +14,7 @@ exports.getRandomQuote = async (req, res, next) => {
 
 exports.getQuoteById = async (req, res, next) => {
   try {
-    const quoteId = req.params.quoteId;
+    const quoteId = req.query.quoteId;
     if (!quoteId) throwError("Bad Request!", 400);
 
     const quote = await Quote.findById(quoteId);
@@ -28,7 +28,7 @@ exports.getQuoteById = async (req, res, next) => {
 
 exports.getQuotesByAnime = async (req, res, next) => {
   try {
-    const animeName = req.params.animeName;
+    const animeName = req.query.anime;
     if (!animeName) throwError("Bad Request!", 400);
 
     const result = await Quote.find({
@@ -45,7 +45,7 @@ exports.getQuotesByAnime = async (req, res, next) => {
 
 exports.getQuotesByCharacter = async (req, res, next) => {
   try {
-    const characterName = req.params.characterName;
+    const characterName = req.query.character;
     if (!characterName) throwError("Bad Request!", 400);
 
     const result = await Quote.find({
