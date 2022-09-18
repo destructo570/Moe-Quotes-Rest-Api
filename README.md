@@ -16,13 +16,15 @@ Database consists of 7000+ quotes crowdsourced from less real website.
 >
 >Returns a random anime quote.
 
+> /api/v1/id?quoteId=6313232ade0fc748a34b6b42
+>
+>Returns a quote ewith specified id.
 
-> /api/v1/anime/:anime_name
+> /api/v1/anime/?anime=Naruto
 >
 >Returns list of quotes from the specified anime.
 
-
-> /api/v1/character/:character_name
+> /api/v1/character/?character=Tenma Tsukamoto
 >
 >Returns list of quotes from the specified character.
 
