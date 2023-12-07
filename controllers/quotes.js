@@ -1,7 +1,7 @@
 const Quote = require("../models/quote");
 const { throwError } = require("../utils/helpers");
 
-exports.getRandomQuote = async (req, res, next) => {
+exports.getRandomQuote = async (_, res, next) => {
   try {
     const quote = await Quote.aggregate([{ $sample: { size: 1 } }]);
     if (!quote) throwError("Quote not found!", 404);

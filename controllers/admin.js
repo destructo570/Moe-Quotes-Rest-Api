@@ -1,10 +1,10 @@
 const Quote = require("../models/quote");
 
-exports.getAddQuote = (req, res, next) => {
+exports.getAddQuote = (_, res) => {
   res.render("admin/add-quote", { pageTitle: "Add a new quote" });
 };
 
-exports.postAddQuote = (req, res, next) => {
+exports.postAddQuote = (req, res) => {
   const body = req.body;
 
   const quote = new Quote({
@@ -23,7 +23,7 @@ exports.postAddQuote = (req, res, next) => {
     });
 };
 
-exports.patchQuote = (req, res, next) => {
+exports.patchQuote = (req, res, _) => {
   const reqBody = req.body;
   const quoteId = req.body.quoteId;
 
@@ -43,7 +43,7 @@ exports.patchQuote = (req, res, next) => {
     });
 };
 
-exports.deleteQuote = (req, res, next) => {
+exports.deleteQuote = (req, res) => {
   const quoteId = req.body.quoteId;
 
   Quote.findById(quoteId)
