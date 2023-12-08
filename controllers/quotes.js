@@ -1,6 +1,17 @@
 const Quote = require("../models/quote");
 const { throwError } = require("../utils/helpers");
 
+exports.getAllQuotes = async (_, res, next) => {
+  try {
+    const [rows] = await Quote.fetchAll();
+    if (!rows) throwError("Quote not found!", 404);
+
+    res.status(200).json(rows);
+  } catch (err) {
+    next(err);
+  }
+};
+
 exports.getRandomQuote = async (_, res, next) => {
   try {
     const quote = await Quote.aggregate([{ $sample: { size: 1 } }]);

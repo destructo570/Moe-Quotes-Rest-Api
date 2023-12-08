@@ -7,6 +7,8 @@ router.get("/", quotesController.getRandomQuote);
 
 router.get("/id", quotesController.getQuoteById);
 
+router.get("/all", quotesController.getAllQuotes);
+
 router.get("/anime", quotesController.getQuotesByAnime);
 
 router.get("/character", quotesController.getQuotesByCharacter);

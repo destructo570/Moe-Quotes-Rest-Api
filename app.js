@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
@@ -16,9 +15,4 @@ app.use("/api/v1/", quotesRoutes);
 
 app.use(sendErrorResponse);
 
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => {
-    app.listen(3000);
-  })
-  .catch((err) => console.log(err));
+app.listen(process.env.PORT || 3000);
