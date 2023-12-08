@@ -16,8 +16,6 @@ exports.createQuote = async (req, res, next) => {
   try {
     const body = req.body;
     const quote = new Quote(null, body.anime, body.anime, body.character);
-    console.log(body);
-    console.log(quote);
     quote.save();
     if (!quote) throwError("Quote not found!", 404);
     res.status(200).json(quote);
