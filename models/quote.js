@@ -8,7 +8,7 @@ module.exports = class Quote {
   }
 
   save(){
-    return db.execute('INSERT INTO quotes (quote, anime, character) VALUES (?, ?, ?, ?)', 
+    return db.execute('INSERT INTO quotes (id, quote, anime, `character`) VALUES (?, ?, ?, ?)', 
     [null, this.quote, this.anime, this.character]);
   }
 

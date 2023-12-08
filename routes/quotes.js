@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get("/", quotesController.getRandomQuote);
 
+router.post("/quote", quotesController.createQuote);
+
 router.get("/id", quotesController.getQuoteById);
 
 router.get("/all", quotesController.getAllQuotes);
