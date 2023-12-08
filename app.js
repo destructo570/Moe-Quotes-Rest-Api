@@ -1,4 +1,5 @@
 const express = require("express");
+const sequelize = require("./utils/database");
 require("dotenv").config();
 
 const app = express();
@@ -15,4 +16,6 @@ app.use("/api/v1/", quotesRoutes);
 
 app.use(sendErrorResponse);
 
-app.listen(process.env.PORT || 3000);
+sequelize.sync().then(()=>{
+    app.listen(process.env.PORT || 3000);
+});

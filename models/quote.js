@@ -1,27 +1,24 @@
-const db = require("../utils/database")
-module.exports = class Quote {
-  constructor(id, quote, anime, character) {
-    this.id = id;
-    this.quote = quote;
-    this.anime = anime;
-    this.character = character;
-  }
+const Sequelize = require("sequelize")
+const sequelize = require("../utils/database");
 
-  save(){
-    return db.execute('INSERT INTO quotes (id, quote, anime, `character`) VALUES (?, ?, ?, ?)', 
-    [null, this.quote, this.anime, this.character]);
-  }
+const Quote = sequelize.define('quote', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  quote: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  anime: {
+    type: Sequelize.STRING,
+    autoIncrement: false
+  },
+  character: {
+    type: Sequelize.STRING,
+    autoIncrement: false
+  },
+});
 
-  static delete(){
-    
-  }
-
-  static fetchAll(){
-    return db.execute('SELECT * FROM quotes');
-  }
-
-  static findById(id){
-    
-  }
-
-};
+module.exports = Quote;
