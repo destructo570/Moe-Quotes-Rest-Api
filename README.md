@@ -33,7 +33,7 @@ Database consists of 7000+ quotes crowdsourced from less real website.
 ### TechStack
 - NodeJs
 - Express
-- Mongoose / SQL
+- SQL
 - Body Parser
 
 ### Credits
